@@ -1,0 +1,29 @@
+[project]
+name = "dojo-re"
+version = "0.1.0"
+description = "AI-generated reverse-engineering challenge dojo"
+readme = "README.md"
+authors = [
+    { name = "dataingress", email = "me@dataingress.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.118.0",
+    "openai>=1.109.0",
+    "pydantic>=2.11.0",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.37.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.0",
+    "pytest>=8.4.0",
+]
+
+[project.scripts]
+dojo-re = "dojo_re.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.3,<0.13.0"]
+build-backend = "uv_build"
